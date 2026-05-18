@@ -1,7 +1,7 @@
 
 # Import python packages.
 import streamlit as st
-import panda as pd
+import pandas as pd
 from snowflake.snowpark.functions import col
 import requests  
 #st.text(smoothiefroot_response.json())
