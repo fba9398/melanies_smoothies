@@ -6,8 +6,6 @@ import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 #st.text(smoothiefroot_response.json())
 
-sf_df = st.dataframe(smoothiefroot_response.json(), use_container_width=True)
-
 # Write directly to the app.
 st.title(f":cup_with_straw: Customize Your Smoothie :cup_with_straw: ")
 st.write(
@@ -43,3 +41,5 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
+
+sf_df = st.dataframe(smoothiefroot_response.json(), use_container_width=True)
