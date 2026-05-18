@@ -17,8 +17,7 @@ st.write("The name on your smoothie will be:", name_on_order)
 
 cnx = st.connection("snowflake")
 session = cnx.session()
-# FIX: Select the column on the Snowpark dataframe BEFORE passing it to st.dataframe
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SEARCH_ON'))
 pd_df = my_dataframe.to_pandas()
 
 ingredients_list = st.multiselect(
